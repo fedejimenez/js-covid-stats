@@ -7,7 +7,7 @@ const confirmados = document.querySelector("#confirmados");
 const recuperados = document.querySelector("#recuperados");
 const fallecidos = document.querySelector("#fallecidos");
 const pais = document.querySelector("#pais");
-
+const actualizado = document.querySelector("#actualizado");
 
 // capturo eventos
 paisesSelect.onchange = function(e) {
@@ -19,7 +19,6 @@ paisesSelect.onchange = function(e) {
 
   obtenerEstadisticas(codigoPais);
 };
-
 
 // definicion de funciones
 function obtenerPaises() {
@@ -64,6 +63,10 @@ function mostrarEstadisticas(stats) {
   confirmados.innerHTML = stats.confirmed.value.toLocaleString();
   recuperados.innerHTML = stats.recovered.value.toLocaleString();
   fallecidos.innerHTML = stats.deaths.value.toLocaleString();
+
+  fecha = new Date(stats.lastUpdate);
+
+  actualizado.innerHTML = `${fecha.getDate()}-${fecha.getMonth()}-${fecha.getFullYear()} ${fecha.getHours()}:${fecha.getMinutes()}`;
 }
 
 // ejecucion
@@ -138,4 +141,4 @@ obtenerEstadisticas("all");
 //     pais.innerHTML = autoCompleteResult[0];
 //     obtenerEstadisticas(paisObjeto.iso2);
 //   }
-//}
+// }
