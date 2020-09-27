@@ -138,4 +138,4 @@ obtenerEstadisticas("all");
 //     pais.innerHTML = autoCompleteResult[0];
 //     obtenerEstadisticas(paisObjeto.iso2);
 //   }
-}
+//}
