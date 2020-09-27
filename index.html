@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+    integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous" />
+
+  <title>Estadisticas COVID-19</title>
+
+  <style>
+    .card {
+      border-bottom: 5px solid white;
+      cursor: pointer;
+      transition: transform 1s;
+    }
+
+    .card:hover {
+      transform: scale(1.05);
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container">
+    <h1 class="title mt-4">
+      Estadisticas COVID-19
+    </h1>
+    <hr class="mb-4">
+    <!-- <div class="error"></div> -->
+    <div>
+      <div class="mb-4 pt-4">
+        <label for="paises">Seleccione el pais deseado:</label>
+        <select name="paises" id="paises">
+          <option value="all">Global</option> <!-- para enviar al backend si hace falta -->
+        </select>
+      </div>
+      <h2 class="text-center mb-4 p-4" id="pais">Global</h2>
+      <div class="row">
+        <div class="col-md-4">
+          <div class="card border-primary shadow">
+            <div class="card-body">
+              <h5 class="card-title font-weight-light mb-4">Confirmados:</h5>
+              <h2 class="text-center" id="confirmados"></h2>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="card border-success shadow">
+            <div class="card-body">
+              <h5 class="card-title font-weight-light mb-4">Recuperados:</h5>
+              <h2 class="text-center" id="recuperados"></h2>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="card border-danger shadow">
+            <div class="card-body">
+              <h5 class="card-title font-weight-light mb-4">Fallecidos:</h5>
+              <h2 class="text-center" id="fallecidos"></h2>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- dynamic search - autocomplete -->
+  <!-- <div class="container">
+    <br>
+    <hr class="m-4">
+    <label for="buscarPais" class="d-block">Escriba el nombre del pais: </label>
+    <input type="text" onkeyup="changeInput(this.value)" id="buscarPais">
+    <div class="bg-light col-md-2 ml-4">
+      <ul id="resultado">
+      </ul>
+    </div>
+  </div> -->
+  <script src="./index.js" defer></script>
+</body>
+
+</html>
